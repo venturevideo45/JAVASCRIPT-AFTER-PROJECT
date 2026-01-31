@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrange Array</title>
+        <style></style>
+    </head>
+    <body>
+        <h1>Arrange Array</h1>
+        <div id="normal"></div>
+        <div id="reverse"></div>
+        <div id="sorted"></div>
+        
+        <script>
+
+            const arr = [5, 3, 8, 1, 2];
+
+            // Normal order
+            const normalDiv = document.getElementById('normal');
+            normalDiv.innerHTML = `<h2>Normal Order</h2><p>${arr.join(', ')}</p>`;
+
+            // Reverse order
+            const reverseDiv = document.getElementById('reverse');
+            const reversedArr = [...arr].reverse();
+            reverseDiv.innerHTML = `<h2>Reverse Order</h2><p>${reversedArr.join(', ')}</p>`;
+
+            // Sorted order
+            const sortedDiv = document.getElementById('sorted');
+            const sortedArr = [...arr].sort((a, b) => a - b);
+            sortedDiv.innerHTML = `<h2>Sorted Order</h2><p>${sortedArr.join(', ')}</p>`;
+        </script>
+    </body>
+</html>

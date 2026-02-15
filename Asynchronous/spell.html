@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async Await Example</title>
+</head>
+<body>
+    <h1>Async/Await result:</h1>
+    <p id="output">Waiting for data...</p>
+
+    <script>
+        function fetchMessage() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve("Hello from the async function!"), 2000);
+            });
+        }
+
+        async function updateDisplay() {
+            try {
+                const result = await fetchMessage();
+
+                document.getElementById('output').innerText = result;
+                console.log("Success:", result);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
